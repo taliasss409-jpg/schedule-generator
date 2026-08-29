@@ -162,13 +162,12 @@ st.markdown("""
     }
 
     /* Footer */
-    .footer-text {
-        text-align: center;
-        color: #9AA39E;
-        font-size: 0.85rem;
-        direction: rtl;
-        margin-top: 3rem;
-    }
+    st.markdown(
+        '<div class="footer-text">'
+        'נוצר על ידי המילואימניקית הטובה בתבל 🌿 AKA טליה סנדר'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
 </style>
 """, unsafe_allow_html=True)
@@ -183,7 +182,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="subtitle">נוצר על ידי המילואימניקית הטובה ביותר    </div>',
+    '<div class="subtitle">נוצר על ידי המילואימניקית הטובה ביותר</div>',
     unsafe_allow_html=True
 )
 
