@@ -46,20 +46,13 @@ st.markdown("""
         padding-bottom: 4rem;
     }
 
-    /* כותרת */
+    /* כותרת ראשית */
     .main-title {
         text-align: center;
+        direction: rtl;
         color: #12372A;
         font-size: 3rem;
         font-weight: 700;
-        margin-bottom: 0.4rem;
-    }
-
-    /* כותרת משנה */
-    .subtitle {
-        text-align: center;
-        color: #61716A;
-        font-size: 1.1rem;
         margin-bottom: 3rem;
     }
 
@@ -70,21 +63,16 @@ st.markdown("""
         padding: 2.5rem;
         box-shadow: 0px 8px 30px rgba(18, 55, 42, 0.10);
         border: 1px solid #E6ECE8;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
 
-    /* כותרת בתוך הכרטיס */
-    .card-title {
+    /* טקסט ראשי בכרטיס */
+    .upload-text {
         color: #12372A;
         font-size: 1.5rem;
         font-weight: 650;
         text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    .card-text {
-        color: #6B756F;
-        text-align: center;
+        direction: rtl;
         margin-bottom: 1.5rem;
     }
 
@@ -117,15 +105,44 @@ st.markdown("""
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
+        direction: rtl;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
-    /* הודעת תחתית */
+    /* כרטיס איך זה עובד */
+    .info-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0px 8px 30px rgba(18, 55, 42, 0.06);
+        border: 1px solid #E6ECE8;
+        margin-top: 1rem;
+    }
+
+    .info-title {
+        color: #12372A;
+        font-size: 1.5rem;
+        font-weight: 650;
+        text-align: center;
+        direction: rtl;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-text {
+        color: #6B756F;
+        text-align: center;
+        direction: rtl;
+        font-size: 1rem;
+        line-height: 2.2;
+    }
+
+    /* Footer */
     .footer-text {
         text-align: center;
         color: #9AA39E;
         font-size: 0.85rem;
+        direction: rtl;
         margin-top: 3rem;
     }
 
@@ -134,44 +151,36 @@ st.markdown("""
 
 
 # --------------------------------------------------
-# כותרת
+# כותרת ראשית
 # --------------------------------------------------
 st.markdown(
     '<div class="main-title">🌿 סידור עבודה</div>',
     unsafe_allow_html=True
 )
 
-st.markdown(
-    '<div class="subtitle">'
-    'יצירת סידור עבודה במהירות ובפשטות'
-    '</div>',
-    unsafe_allow_html=True
-)
-
 
 # --------------------------------------------------
-# כרטיס העלאת קובץ
+# כרטיס העלאת הקובץ
 # --------------------------------------------------
 st.markdown(
     '<div class="upload-card">',
     unsafe_allow_html=True
 )
 
+# טיפול נפרד בכיווניות של Excel
 st.markdown(
-    '<div class="card-title">העלאת קובץ בקשות</div>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<div class="card-text">'
-    'בחרי את קובץ ה־Excel המכיל את זמינות העובדים'
-    '</div>',
+    """
+    <div class="upload-text">
+        בחרי את קובץ ה־<span dir="ltr">Excel</span>
+        המכיל את זמינות העובדים
+    </div>
+    """,
     unsafe_allow_html=True
 )
 
 
 uploaded_file = st.file_uploader(
-    "בחרי קובץ Excel",
+    "בחרי קובץ",
     type=["xlsx"],
     label_visibility="collapsed"
 )
@@ -180,9 +189,11 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
 
     st.markdown(
-        f'<div class="file-success">'
-        f'✓ נבחר קובץ: <b>{uploaded_file.name}</b>'
-        f'</div>',
+        f"""
+        <div class="file-success">
+            ✓ נבחר קובץ: <b>{uploaded_file.name}</b>
+        </div>
+        """,
         unsafe_allow_html=True
     )
 
@@ -205,8 +216,7 @@ if uploaded_file is not None:
                 output.seek(0)
 
             st.success(
-                f"🎉 סידור העבודה מוכן! "
-                f"זוהו {len(employees)} עובדים."
+                f"🎉 סידור העבודה מוכן! זוהו {len(employees)} עובדים."
             )
 
             st.download_button(
@@ -228,19 +238,25 @@ if uploaded_file is not None:
                 st.exception(e)
 
 
+# --------------------------------------------------
+# איך זה עובד
+# --------------------------------------------------
 st.markdown(
-    '<div class="upload-card">',
+    '<div class="info-card">',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '<div class="info-title">איך זה עובד?</div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
     """
-    <div class="card-title">איך זה עובד?</div>
-
-    <div class="card-text">
-        ① העלאת קובץ הבקשות<br><br>
-        ② יצירת סידור העבודה<br><br>
-        ③ הורדת קובץ ה־Excel המוכן
+    <div class="info-text">
+        ① העלאת קובץ הבקשות<br>
+        ② יצירת סידור העבודה<br>
+        ③ הורדת סידור העבודה המוכן
     </div>
     """,
     unsafe_allow_html=True
