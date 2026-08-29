@@ -183,7 +183,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="subtitle">נוצר על ידי המילואימניקית הטובה ביותר</div>',
+    '<div class="subtitle">נוצר על ידי המילואימניקית הטובה ביותר    </div>',
     unsafe_allow_html=True
 )
 
