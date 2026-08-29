@@ -169,7 +169,7 @@ st.markdown(
 st.markdown(
     """
     <div class="upload-text">
-        בחרי את קובץ ה־<span dir="ltr">Excel</span>
+        בחר את קובץ ה־<span dir="ltr">Excel</span>
         המכיל את זמינות העובדים
     </div>
     """,
@@ -178,7 +178,7 @@ st.markdown(
 
 
 uploaded_file = st.file_uploader(
-    "בחרי קובץ",
+    "בחר קובץ",
     type=["xlsx"],
     label_visibility="collapsed"
 )
@@ -199,7 +199,7 @@ if uploaded_file is not None:
 
         try:
 
-            with st.spinner("מייצרת את סידור העבודה..."):
+            with st.spinner("מייצר את קובץ זמינות העובדים" ..."):
 
                 requests_bytes = uploaded_file.getvalue()
 
@@ -214,13 +214,13 @@ if uploaded_file is not None:
                 output.seek(0)
 
             st.success(
-                f"🎉 סידור העבודה מוכן! זוהו {len(employees)} עובדים."
+                f"🎉 סידור הזמינות מוכן! זוהו {len(employees)} עובדים."
             )
 
             st.download_button(
-                label="⬇️ הורידי את סידור העבודה",
+                label="⬇️ הורד את קובץ זמינות העובדים",
                 data=output.getvalue(),
-                file_name="סידור_עבודה.xlsx",
+                file_name="סידור_זמינות.xlsx",
                 mime=(
                     "application/vnd.openxmlformats-officedocument."
                     "spreadsheetml.sheet"
