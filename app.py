@@ -231,7 +231,7 @@ if uploaded_file is not None:
                 output.seek(0)
 
             st.success(
-                f"🎉 סידור הזמינות מוכן! זוהו {len(employees)} עובדים."
+                f"🎉 סידור הזמינות מוכן! זוהו {len(employees)} עובדים"
             )
 
             st.download_button(
