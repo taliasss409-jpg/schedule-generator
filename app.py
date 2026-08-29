@@ -21,7 +21,6 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-    /* הסתרת אלמנטים מיותרים */
     #MainMenu {
         visibility: hidden;
     }
@@ -56,7 +55,7 @@ st.markdown("""
         margin-bottom: 3rem;
     }
 
-    /* כרטיס */
+    /* כרטיס העלאה */
     .upload-card {
         background: white;
         border-radius: 20px;
@@ -154,7 +153,7 @@ st.markdown("""
 # כותרת ראשית
 # --------------------------------------------------
 st.markdown(
-    '<div class="main-title">🌿 סידור עבודה</div>',
+    '<div class="main-title">סידור עבודה 🌿</div>',
     unsafe_allow_html=True
 )
 
@@ -167,7 +166,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# טיפול נפרד בכיווניות של Excel
 st.markdown(
     """
     <div class="upload-text">
@@ -254,11 +252,10 @@ st.markdown(
 st.markdown(
     """
     <div class="info-text">
-        ① העלאת קובץ הבקשות<br>
-        ② יצירת סידור העבודה<br>
-        ③ הורדת סידור העבודה המוכן
+        ① העלאת קובץ זמינות העובדים<br>
+        ② ניתוח ועיבוד הזמינות<br>
+        ③ הפקת בסיס לסידור העבודה
     </div>
     """,
     unsafe_allow_html=True
 )
-
