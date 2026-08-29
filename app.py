@@ -235,7 +235,7 @@ if uploaded_file is not None:
             )
 
             st.download_button(
-                label="⬇️ הורד את קובץ זמינות העובדים",
+                label="⬇️ הורדה",
                 data=output.getvalue(),
                 file_name="סידור_זמינות.xlsx",
                 mime=(
