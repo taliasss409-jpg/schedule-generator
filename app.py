@@ -164,7 +164,7 @@ st.markdown("""
     /* Footer */
     st.markdown(
         '<div class="footer-text">'
-        'נוצר על ידי המילואימניקית הטובה בתבל 🌿 AKA טליה סנדר'
+        'נוצר על ידי המילואימניקית הטובה בתבל AKA טליה סנדר'
         '</div>',
         unsafe_allow_html=True
     )
