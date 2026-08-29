@@ -199,7 +199,8 @@ if uploaded_file is not None:
 
         try:
 
-            with st.spinner(מייצר את קובץ "זמינות העובדים"...):
+            with st.spinner("מייצר את סידור העובדים..."):
+
 
                 requests_bytes = uploaded_file.getvalue()
 
