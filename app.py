@@ -52,6 +52,15 @@ st.markdown("""
         color: #12372A;
         font-size: 3rem;
         font-weight: 700;
+        margin-bottom: 0.4rem;
+    }
+
+    /* כותרת משנה */
+    .subtitle {
+        text-align: center;
+        direction: rtl;
+        color: #61716A;
+        font-size: 1.1rem;
         margin-bottom: 3rem;
     }
 
@@ -74,6 +83,7 @@ st.markdown("""
         direction: rtl;
         margin-bottom: 1.5rem;
     }
+
     /* כפתור יצירת סידור */
     .stButton > button {
         width: 100%;
@@ -81,19 +91,18 @@ st.markdown("""
         padding: 0.7rem;
         font-size: 1rem;
         font-weight: 600;
-    
+
         background-color: #12372A;
         color: white;
         border: none;
     }
-    
+
     .stButton > button:hover {
         background-color: #1D513D;
         color: white;
         border: none;
     }
 
-    
     /* כפתור הורדת הקובץ */
     .stDownloadButton > button {
         width: 100%;
@@ -101,7 +110,7 @@ st.markdown("""
         padding: 0.7rem;
         font-size: 1rem;
         font-weight: 600;
-    
+
         background-color: #E67E22;
         color: white;
         border: none;
@@ -111,8 +120,8 @@ st.markdown("""
         background-color: #D35400;
         color: white;
         border: none;
-}
-   
+    }
+
     /* מידע על הקובץ */
     .file-success {
         background-color: #EDF6F0;
@@ -173,6 +182,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    '<div class="subtitle">יצירת סידור עבודה במהירות ובפשטות</div>',
+    unsafe_allow_html=True
+)
+
 
 # --------------------------------------------------
 # כרטיס העלאת הקובץ
@@ -216,7 +230,6 @@ if uploaded_file is not None:
         try:
 
             with st.spinner("מייצר את סידור העובדים..."):
-
 
                 requests_bytes = uploaded_file.getvalue()
 
