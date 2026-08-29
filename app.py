@@ -74,29 +74,45 @@ st.markdown("""
         direction: rtl;
         margin-bottom: 1.5rem;
     }
-
-    /* כפתורים */
-    .stButton > button,
-    .stDownloadButton > button {
+    /* כפתור יצירת סידור */
+    .stButton > button {
         width: 100%;
         border-radius: 10px;
         padding: 0.7rem;
         font-size: 1rem;
         font-weight: 600;
-    }
-
-    .stButton > button {
+    
         background-color: #12372A;
         color: white;
         border: none;
     }
-
+    
     .stButton > button:hover {
         background-color: #1D513D;
         color: white;
         border: none;
     }
 
+    
+    /* כפתור הורדת הקובץ */
+    .stDownloadButton > button {
+        width: 100%;
+        border-radius: 10px;
+        padding: 0.7rem;
+        font-size: 1rem;
+        font-weight: 600;
+    
+        background-color: #E67E22;
+        color: white;
+        border: none;
+    }
+
+    .stDownloadButton > button:hover {
+        background-color: #D35400;
+        color: white;
+        border: none;
+}
+   
     /* מידע על הקובץ */
     .file-success {
         background-color: #EDF6F0;
