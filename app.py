@@ -153,7 +153,7 @@ st.markdown("""
 # כותרת ראשית
 # --------------------------------------------------
 st.markdown(
-    '<div class="main-title">סידור עבודה 🌿</div>',
+    '<div class="main-title">כלי עזר לשיבוץ 🌿</div>',
     unsafe_allow_html=True
 )
 
@@ -195,7 +195,7 @@ if uploaded_file is not None:
         unsafe_allow_html=True
     )
 
-    if st.button("⚙️ צור סידור עבודה", type="primary"):
+    if st.button("⚙️ צור סידור זמינות", type="primary"):
 
         try:
 
