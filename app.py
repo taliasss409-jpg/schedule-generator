@@ -8,7 +8,7 @@ from schedule_engine import build_schedule_workbook
 # הגדרות הדף
 # --------------------------------------------------
 st.set_page_config(
-    page_title="סידור עבודה",
+    page_title="כלי עזר לשיבוץ",
     page_icon="🌿",
     layout="wide",
     initial_sidebar_state="collapsed",
