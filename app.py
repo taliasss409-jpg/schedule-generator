@@ -162,12 +162,14 @@ st.markdown("""
     }
 
     /* Footer */
-    st.markdown(
-        '<div class="footer-text">'
-        'נוצר על ידי המילואימניקית הטובה בתבל AKA טליה סנדר'
-        '</div>',
-        unsafe_allow_html=True
-    )
+    .footer-text {
+        text-align: center;
+        color: #9AA39E;
+        font-size: 0.85rem;
+        direction: rtl;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+    }
 
 </style>
 """, unsafe_allow_html=True)
@@ -286,5 +288,17 @@ st.markdown(
         ③ הפקת בסיס לסידור העבודה
     </div>
     """,
+    unsafe_allow_html=True
+)
+
+)
+
+# --------------------------------------------------
+# Footer אישי
+# --------------------------------------------------
+st.markdown(
+    '<div class="footer-text">'
+    'נוצר על ידי המילואימניקית הטובה בתבל AKA טליה סנדר 🌿'
+    '</div>',
     unsafe_allow_html=True
 )
