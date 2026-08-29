@@ -262,13 +262,3 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-# --------------------------------------------------
-# Footer
-# --------------------------------------------------
-st.markdown(
-    '<div class="footer-text">'
-    'מערכת חכמה ליצירת סידורי עבודה'
-    '</div>',
-    unsafe_allow_html=True
-)
