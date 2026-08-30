@@ -20,7 +20,7 @@ SHIFT_ALIASES = {'אחרי משמרת לילה':'לילה'}
 IGNORE_TOKENS = {'חופש','מרוכז','יום חופש מרוכז'}
 
 # צבעי מרקר עדינים. כל עובד מקבל צבע קבוע לפי סדר הופעתו בקובץ.
-EMPLOYEE_HIGHLIGHT_COLORS = ['FFF2CC','DDEBF7','E2F0D9','FCE4D6','E4DFEC','EADCF8','D9EAD3','F4CCCC','CFE2F3','FCE5CD','D9E1F2','EAD1DC']
+EMPLOYEE_HIGHLIGHT_COLORS = ['FFD966','9DC3E6','A9D18E','F4B183','D9B3FF','FF99CC','FFE699','B4C7E7','C6E0B4','F8CBAD','DDEBF7','E2EFDA']
 
 def get_role(service_type, main_role):
     for value in (main_role, service_type):
@@ -123,8 +123,8 @@ def build_schedule_workbook(requests_bytes):
                     cell=ws.cell(r,c,value); cell.border=border; cell.alignment=cell_align
                     if value and colname not in {'יום','תאריך','משמרת'} and value in employee_colors:
                         color=employee_colors[value]
-                        cell.fill=PatternFill(start_color=color,end_color=color,fill_type='solid')
-                        cell.font=Font(color='000000')
+                        cell.fill = PatternFill(fill_type='solid', fgColor=color)
+                        cell.font = Font(color='000000')
 
             # מאחדים רק את יום/תאריך/משמרת כדי שהעובדים יישארו בשורות נפרדות באותה משבצת תפקיד.
             if height>1:
