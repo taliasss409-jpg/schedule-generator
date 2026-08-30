@@ -132,10 +132,12 @@ def extract_days_from_requests(columns):
 
 
 # צבע קבוע לכל עובד. צבעי פסטל ברורים ונעימים.
+# צבעים כהים ורוויים יותר, כדי ליצור ניגודיות ברורה מול הרקע הלבן.
 EMPLOYEE_COLORS = [
-    "C6E2FF", "FFD6E0", "D9F2D9", "FFF1B8", "E6D6FF",
-    "CFF5E7", "FFDCC2", "D7E8FF", "F9D5E5", "E2F0CB",
-    "FFE0B2", "D1E8E4", "E8D5F5", "FFF3CD", "D4EDDA",
+    "1F77B4", "D62728", "2CA02C", "FF7F0E", "9467BD",
+    "17BECF", "8C564B", "E377C2", "BCBD22", "006D77",
+    "C1121F", "0077B6", "2D6A4F", "7B2CBF", "B45309",
+    "00897B", "AD1457", "1565C0", "558B2F", "6D4C41",
 ]
 
 def employee_color(name):
@@ -146,7 +148,7 @@ def employee_color(name):
 def colored_names_rich_text(value):
     """
     משאירה את כל העובדים באותו תא.
-    כל שם מקבל צבע טקסט אישי וקבוע; הפסיקים נשארים שחורים.
+    כל שם מקבל צבע טקסט אישי וקבוע ובעל ניגודיות גבוהה; הפסיקים נשארים שחורים.
     """
     if not isinstance(value, str) or not value.strip():
         return value
