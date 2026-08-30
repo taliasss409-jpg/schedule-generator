@@ -5,8 +5,6 @@ from collections import defaultdict
 import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.cell.rich_text import CellRichText, TextBlock
-from openpyxl.cell.text import InlineFont
 from openpyxl.utils import get_column_letter
 
 
@@ -129,40 +127,6 @@ def extract_days_from_requests(columns):
 
     return days
 
-
-
-# צבע קבוע לכל עובד. צבעי פסטל ברורים ונעימים.
-# צבעים כהים ורוויים יותר, כדי ליצור ניגודיות ברורה מול הרקע הלבן.
-EMPLOYEE_COLORS = [
-    "1F77B4", "D62728", "2CA02C", "FF7F0E", "9467BD",
-    "17BECF", "8C564B", "E377C2", "BCBD22", "006D77",
-    "C1121F", "0077B6", "2D6A4F", "7B2CBF", "B45309",
-    "00897B", "AD1457", "1565C0", "558B2F", "6D4C41",
-]
-
-def employee_color(name):
-    # hash יציב, כך שלאותו עובד יהיה תמיד אותו צבע גם בהרצות שונות.
-    total = sum((i + 1) * ord(ch) for i, ch in enumerate(str(name)))
-    return EMPLOYEE_COLORS[total % len(EMPLOYEE_COLORS)]
-
-def colored_names_rich_text(value):
-    """
-    משאירה את כל העובדים באותו תא.
-    כל שם מקבל צבע טקסט אישי וקבוע ובעל ניגודיות גבוהה; הפסיקים נשארים שחורים.
-    """
-    if not isinstance(value, str) or not value.strip():
-        return value
-
-    names = [name.strip() for name in value.split(',') if name.strip()]
-    if not names:
-        return value
-
-    rich = CellRichText()
-    for i, name in enumerate(names):
-        if i:
-            rich.append(TextBlock(InlineFont(color="000000"), ", "))
-        rich.append(TextBlock(InlineFont(color=employee_color(name)), name))
-    return rich
 
 def build_schedule_workbook(requests_bytes):
     from collections import defaultdict
@@ -325,14 +289,6 @@ def build_schedule_workbook(requests_bytes):
                 cell = ws.cell(row=row_idx, column=c, value=value)
                 cell.border = border
                 cell.alignment = cell_align
-
-                # שמירה על אותו מבנה תאים: רק צביעת כל שם בנפרד בתוך התא.
-                if (
-                    isinstance(value, str)
-                    and colname not in {'יום', 'תאריך', 'משמרת'}
-                    and value.strip()
-                ):
-                    cell.value = colored_names_rich_text(value)
 
             row_idx += 1
 
